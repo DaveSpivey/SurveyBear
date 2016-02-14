@@ -1,6 +1,50 @@
 <h1>Hello, <%= @logged_in_as.first_name %>!</h1>
 <hr>
 
+
+<div class="bs-example" data-example-id="table-within-panel">
+  <div class="panel panel-default">
+    <div class="panel-heading">SURVEYS</div>
+      <div class="panel-body">
+        <p>Here is a list of all your surveys:</p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Survey Name</th>
+            <th>Registered At</th>
+            <th>Updated At</th>
+          </tr>
+        </thead>
+      <% @surveys.each do |survey| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= survey.id %></th>
+          <td><%= survey.title %></td>
+          <td><%= survey.created_at.httpdate %></td>
+          <td><%= survey.updated_at.httpdate %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+
+
+    <div><hr></div>
+    <div style="text-align: center;">
+      <a href="/users/<%= session[:user_id] %>/surveys/new">
+      <button type="button" class="btn btn-info">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        Click Here to Create A New Survey
+      </button>
+      </a>
+    </div>
+    <div><hr></div>
+
+</div>
+
 <div class="bs-example" data-example-id="table-within-panel">
   <div class="panel panel-default">
     <div class="panel-heading"><%= @logged_in_as.first_name %></div>
