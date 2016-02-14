@@ -9,3 +9,24 @@ users = 10.times.map do
                 :email      => Faker::Internet.email,
                 :password   => 'password' )
 end
+
+50.times do
+ Survey.create!( :title => Faker::Company.name,
+                :user_id  => rand(1..5))
+end
+
+
+100.times do
+  Question.create!(:body => Faker::Lorem.sentence + "?",
+                  :survey_id => rand(1..50)
+                  )
+end
+
+
+
+500.times do
+  Choice.create!(:description => Faker::Commerce.color,
+                  :question_id => rand(1..100))
+end
+
+
