@@ -1,6 +1,7 @@
 get '/' do
-
-  erb :index
+  @users = User.all
+  @surveys = Survey.all
+  erb :"index"
 end
 
 get '/secret' do
