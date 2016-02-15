@@ -36,3 +36,11 @@ post '/users/:user_id/surveys' do
   redirect "/users/#{session[:user_id]}"
 
 end
+
+
+
+
+get '/surveys/:id/results' do
+  @survey = Survey.find_by(id: params[:id])
+  erb :"user_results"
+end

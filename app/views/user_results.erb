@@ -1,0 +1,16 @@
+
+<h1> Results for <%=@survey.title%> </h1>
+
+<% @survey.questions.each do |each_question| %>
+<%=each_question.body %>
+<br>
+<%each_question.choices.each do |each_choice| %>
+<br>
+<%=each_choice.description + "---" + each_choice.responses.count.to_s + " responses"%>
+<br>
+<%end%>
+----------------------------------------------------
+<br>
+<%end%>
+
+
