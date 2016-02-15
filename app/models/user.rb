@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :surveys
   has_many :responses
+  has_many :surveys_taken
+  has_many :surveys, through: :surveys_taken
 
   validates :first_name, presence: true
   validates :last_name, presence: true
