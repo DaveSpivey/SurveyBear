@@ -1,13 +1,13 @@
 
 <h1><%= @survey.title %></h1>
-Survey Created By: <%= @survey.user.first_name%>
+Survey Created By: <%= @survey.creator.first_name%>
 <br>
 <%@survey.questions.each do |each_question|%>
 <br>
   <%=each_question.body%>
   <br>
   <br>
-<form action="#" method="POST">
+<form action="/surveys/<%=@survey.id%>" method="POST">
   <% each_question.choices.each do |each_choice| %>
 
   <input type="radio" name="<%=each_question.id%>" value="<%= each_choice.description%>" > <%=each_choice.description%><br>

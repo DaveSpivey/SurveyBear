@@ -8,7 +8,8 @@ end
 
 class User < ActiveRecord::Base
 
-  has_many :surveys
+  has_many :created_surveys, :foreign_key => "creator_id", :class_name => "Survey"
+  has_many :taken_surveys, :foreign_key => "taker_id", :class_name => "Response"
   has_many :responses
 
   validates :first_name, presence: true

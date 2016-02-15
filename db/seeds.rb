@@ -12,8 +12,11 @@ end
 
 50.times do
  Survey.create!( :title => Faker::Company.name,
-                :user_id  => rand(1..5))
+                :creator_id  => rand(1..10))
+ # newsurvey = Survey.new(:title => Faker::Company.name)
+ # User.first.created_surveys << newsurvey
 end
+
 
 
 100.times do
