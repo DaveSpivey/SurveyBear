@@ -10,7 +10,7 @@ Survey Created By: <%= @survey.creator.first_name%>
 <form action="/surveys/<%=@survey.id%>" method="POST">
   <% each_question.choices.each do |each_choice| %>
 
-  <input type="radio" name="<%=each_question.id%>" value="<%= each_choice.description%>" > <%=each_choice.description%><br>
+  <input type="radio" name=<%="responses[#{each_question.id}]"%> value="<%= each_choice.id%>" > <%=each_choice.description%><br>
 
 
   <br>
