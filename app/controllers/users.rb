@@ -22,7 +22,7 @@ end
 get '/users/:user_id' do
   @logged_in_as = User.find(session[:user_id]) if session[:user_id]
   @viewing_user = User.find(params[:user_id])
-  @surveys  = User.find(session[:user_id]).surveys
+  @surveys  = User.find(session[:user_id]).created_surveys
 
   if @logged_in_as && @logged_in_as.id == @viewing_user.id
     erb :user

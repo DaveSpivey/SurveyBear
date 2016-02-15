@@ -56,6 +56,7 @@
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/users/new">Register</a></li>
             <li><a href="/sessions/new">Login</a></li>
+            <li><a href="/users/<%=session[:user_id]%>">Your Profile</a>
             <li><a href="/logout">Logout</a></li>
             <li><a href="/secret">Secret Area</a></li>
             <li class="dropdown">
@@ -117,7 +118,7 @@
            $('<div/>', {
                'class' : 'extraPerson', html: GetHtml()
      }).hide().appendTo('#container').slideDown('slow');
-         
+
      });
  })
  function GetHtml()
@@ -125,7 +126,7 @@
       var len = $('.extraPerson').length;
     var $html = $('.extraPersonTemplate').clone();
     $html.find('[name=description]')[0].name="choice[description" + len + "]";
-    return $html.html() + "<br>";    
+    return $html.html() + "<br>";
 }
 
 </script>
