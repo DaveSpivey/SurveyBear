@@ -1,3 +1,7 @@
+get '/session-viewer' do
+  session.inspect
+end
+
 get '/sessions/new' do
   if session[:user_id]
     @user = User.find(session[:user_id])
