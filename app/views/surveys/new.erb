@@ -1,0 +1,46 @@
+<form method="POST" action="/users/1/surveys">
+
+  <div class="form-group row">
+    <label for="inputSurveyTitle" class="col-sm-2 form-control-label">Survey Title</label>
+    <div class="col-sm-10">
+      <input type="text" value="<%= @survey.title if @survey %>" name="title" class="form-control" placeholder="e.g. Food Survey" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputSurveyTitle" class="col-sm-2 form-control-label">Survey Question</label>
+    <div class="col-sm-10">
+      <input type="text" value="<%= @question.body if @question %>" name="body" class="form-control" placeholder="e.g. What is your favorite food?" required>
+    </div>
+  </div>
+
+
+
+    <div class="form-group row">
+      <label for="inputSurveyTitle" class="col-sm-2 form-control-label">Answer</label>
+      <div class="col-sm-10 inputs">
+    
+      <div class="extraPersonTemplate">
+        <div class="controls controls-row">
+            <input class="span3 form-control" placeholder="e.g Pizza" type="text" name="description">
+        </div>
+    </div>
+    <div id="container"></div>
+    <a href="#" id="addRow"><i class="icon-plus-sign icon-white"></i> Add another choice</p></a>
+
+
+
+
+      </div>
+    </div>
+
+    
+
+
+
+  <div class="form-group row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-secondary">Sign in</button>
+    </div>
+  </div>
+</form>
