@@ -22,7 +22,7 @@
       <tbody>
         <tr>
           <th scope="row"><%= survey.id %></th>
-          <td><a href="/users/<%= @logged_in_as.id %>/surveys/<%= survey.id %>"><%= survey.title %></a></td>
+          <td><a href="/surveys/<%= survey.id %>/results"><%= survey.title %></a></td>
           <td><%= survey.created_at.httpdate %></td>
           <td><%= survey.updated_at.httpdate %></td>
         </tr>
