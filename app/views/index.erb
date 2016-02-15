@@ -4,16 +4,20 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
 
 
-
+<h1>Take a Survey!</h1>
+<br>
  <% @surveys.each do |each_survey| %>
+  <div>
   <br>
-            <a href="/surveys/<%=each_survey.id%>">
-        <%= each_survey.title %>
-        <br>
-            </a>
-
-          </div>
-          <%end%>
+  <a href="/surveys/<%=each_survey.id%>">
+    <%= each_survey.title %>
+    <p>
+    <br>
+    <button type="button" class="btn btn-primary">Take Survey</button>
+    </p>
+    <br> </a>
+    </div>
+<%end%>
 
       <div class="jumbotron">
 
