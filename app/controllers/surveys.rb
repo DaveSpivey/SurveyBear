@@ -13,24 +13,26 @@ post '/users/:user_id/surveys' do
 
   @survey = Survey.new()
   @survey.title = params[:title]
-    
+  @survey.user_id = session[:user_id]
+  @survey.save
+
   @question = Question.new()
   @question.body = params[:body]
   @question.survey_id = @survey.id
-    
-  # @choice_container = Array.new unless @choice_container && @question
-  # @choice_container << params[:choice]
+  @question.save
   
-  # p '=' * 50
-  # puts params[:choice]
-  # puts @choice_container.count
-  # p '=' * 50
-  
+  @choice = Choice.new
+  @choice.description = params[:description]
+  @choice.question_id = @question.id
+  @choice.save
 
-  # if @survey.save
-  #   redirect "/users/#{@user.id}/surveys"
-  # else
-    erb :'surveys/new'
-  # end
+  params[:choice].each do |choice|
+    @choice = Choice.new
+    @choice.description = choice[1]
+    @choice.question_id = @question.id
+    @choice.save
+  end
+  
+  redirect "/users/#{session[:user_id]}"
 
 end
