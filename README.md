@@ -1,2 +1,3 @@
 # SurveyBear
-awesomeness
+
+## Simple survey app built with Sinatra
